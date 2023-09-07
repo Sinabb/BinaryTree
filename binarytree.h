@@ -142,6 +142,26 @@ namespace mytree
 			DFSRecursive(node->mpRight);
 			Visit(node);
 		}
+
+		int TreeSum(Node* node)
+		{
+			//base case
+			if (node == nullptr)
+			{
+				return;
+			}
+
+			return TreeSum(node->mpLeft) + node->mData + TreeSum(node->mpRight);
+		}
+
+		bool Search(Node* node, int value)
+		{
+			if (!node) return false;
+			return node->mData == value || 
+				Search(node->mpLeft, value) ||
+				Search(node->mpRight, value);
+		}
+		
 	};
 }
 

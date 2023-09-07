@@ -24,7 +24,10 @@ int main()
 	std::cout << std::endl;
 	myTree.DepthFirstSearch();
 	std::cout << std::endl;
-	myTree.DFSRecursive();
+	myTree.DFSRecursive(myTree.GetRoot());
+	std::cout << std::endl;
+
+	int treesum = myTree.TreeSum();
 }
 
 /*
